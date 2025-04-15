@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ProPlayersList
+
+private let di = DependencyContainer.make()
 
 @main
 struct HomeWork2App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            di.make()
         }
     }
 }

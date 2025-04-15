@@ -6,20 +6,22 @@
 //
 
 public final class DependencyContainer {
+    private let proPlayersListRemoteProvider: ProPlayersListRemoteProvider = ProPlayersListRemoteProviderImpl()
+    
     private init() {
         
     }
 }
 
 public extension DependencyContainer {
-    func make() -> DependencyContainer {
+    static func make() -> DependencyContainer {
         .init()
     }
 }
 
 public extension DependencyContainer {
-    func make() -> ProPlayersListView {
-        ProPlayersListView()
+    @MainActor func make() -> ProPlayersListView {
+        ProPlayersListView(viewModel: .init(remoteProvider: proPlayersListRemoteProvider))
     }
 }
     
