@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		342ACC6A2DAE5FE70081309F /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 342ACC692DAE5FE70081309F /* OpenAPIClient */; };
+		344B08892DAE7C5B003312BF /* ProPlayersList in Frameworks */ = {isa = PBXBuildFile; productRef = 344B08882DAE7C5B003312BF /* ProPlayersList */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				342ACC6A2DAE5FE70081309F /* OpenAPIClient in Frameworks */,
+				344B08892DAE7C5B003312BF /* ProPlayersList in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 			);
 			name = HomeWork2;
 			packageProductDependencies = (
-				342ACC692DAE5FE70081309F /* OpenAPIClient */,
+				344B08882DAE7C5B003312BF /* ProPlayersList */,
 			);
 			productName = HomeWork2;
 			productReference = 340D778B2DAD195100EAE0DD /* HomeWork2.app */;
@@ -101,7 +101,7 @@
 			mainGroup = 340D77822DAD195100EAE0DD;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				342ACC682DAE5FE70081309F /* XCLocalSwiftPackageReference "Package/OpenAPIClient" */,
+				344B08872DAE7C5B003312BF /* XCLocalSwiftPackageReference "Package/ProPlayersList" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 340D778C2DAD195100EAE0DD /* Products */;
@@ -337,16 +337,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		342ACC682DAE5FE70081309F /* XCLocalSwiftPackageReference "Package/OpenAPIClient" */ = {
+		344B08872DAE7C5B003312BF /* XCLocalSwiftPackageReference "Package/ProPlayersList" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Package/OpenAPIClient;
+			relativePath = Package/ProPlayersList;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		342ACC692DAE5FE70081309F /* OpenAPIClient */ = {
+		344B08882DAE7C5B003312BF /* ProPlayersList */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = OpenAPIClient;
+			productName = ProPlayersList;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
