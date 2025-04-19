@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "ProPlayersList",
+    name: "ProPlayersFavorites",
     platforms: [.iOS("18.0")],
     products: [
         .library(
-            name: "ProPlayersList",
-            targets: ["ProPlayersList"]
+            name: "ProPlayersFavorites",
+            targets: ["ProPlayersFavorites"]
         ),
     ],
     dependencies: [
@@ -18,7 +18,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "ProPlayersList",
+            name: "ProPlayersFavorites",
             dependencies: [
                 "OpenAPIClient",
                 "UIComponents",

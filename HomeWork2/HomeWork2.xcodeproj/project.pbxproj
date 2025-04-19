@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		344B08892DAE7C5B003312BF /* ProPlayersList in Frameworks */ = {isa = PBXBuildFile; productRef = 344B08882DAE7C5B003312BF /* ProPlayersList */; };
+		957C2AF92DB3C18E0058967F /* ProPlayersFavorites in Frameworks */ = {isa = PBXBuildFile; productRef = 957C2AF82DB3C18E0058967F /* ProPlayersFavorites */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				344B08892DAE7C5B003312BF /* ProPlayersList in Frameworks */,
+				957C2AF92DB3C18E0058967F /* ProPlayersFavorites in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +73,7 @@
 			name = HomeWork2;
 			packageProductDependencies = (
 				344B08882DAE7C5B003312BF /* ProPlayersList */,
+				957C2AF82DB3C18E0058967F /* ProPlayersFavorites */,
 			);
 			productName = HomeWork2;
 			productReference = 340D778B2DAD195100EAE0DD /* HomeWork2.app */;
@@ -102,6 +105,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				344B08872DAE7C5B003312BF /* XCLocalSwiftPackageReference "Package/ProPlayersList" */,
+				957C2AF72DB3C18E0058967F /* XCLocalSwiftPackageReference "Package/ProPlayersFavorites" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 340D778C2DAD195100EAE0DD /* Products */;
@@ -341,12 +345,20 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Package/ProPlayersList;
 		};
+		957C2AF72DB3C18E0058967F /* XCLocalSwiftPackageReference "Package/ProPlayersFavorites" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Package/ProPlayersFavorites;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		344B08882DAE7C5B003312BF /* ProPlayersList */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ProPlayersList;
+		};
+		957C2AF82DB3C18E0058967F /* ProPlayersFavorites */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ProPlayersFavorites;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
