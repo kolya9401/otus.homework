@@ -7,11 +7,21 @@
 
 import Foundation
 
-public struct ProPlayerDTO: Codable {
-    public struct TeamDTO: Codable {
-        let id: Int
-        let name: String
-        let tag: String
+public struct ProPlayerDTO {
+    public struct TeamDTO {
+        public let id: Int
+        public let name: String
+        public let tag: String
+        
+        public init(
+            id: Int,
+            name: String,
+            tag: String
+        ) {
+            self.id = id
+            self.name = name
+            self.tag = tag
+        }
     }
     
     public let accountId: Int
@@ -32,4 +42,60 @@ public struct ProPlayerDTO: Codable {
     public let fantasyRole: Int? // Сделать енам с позициями
     /// Команда
     public let team: TeamDTO?
+    
+    public init(
+        accountId: Int,
+        steamid: String,
+        avatar: URL?,
+        avatarmedium: URL?,
+        avatarfull: URL?,
+        steamProfile: URL?,
+        steamName: String?,
+        name: String,
+        fantasyRole: Int?,
+        team: TeamDTO?
+    ) {
+        self.accountId = accountId
+        self.steamid = steamid
+        self.avatar = avatar
+        self.avatarmedium = avatarmedium
+        self.avatarfull = avatarfull
+        self.steamProfile = steamProfile
+        self.steamName = steamName
+        self.name = name
+        self.fantasyRole = fantasyRole
+        self.team = team
+    }
 }
+
+extension ProPlayerDTO: Codable {
+}
+
+extension ProPlayerDTO.TeamDTO: Codable {
+}
+
+//public extension ProPlayerDTO {
+//    init(
+//        accountId: Int,
+//        steamid: String,
+//        avatar: URL?,
+//        avatarmedium: URL?,
+//        avatarfull: URL?,
+//        steamProfile: URL?,
+//        steamName: String?,
+//        name: String,
+//        fantasyRole: Int?,
+//        team: TeamDTO?
+//    ) {
+//        self.accountId = accountId
+//        self.steamid = steamid
+//        self.avatar = avatar
+//        self.avatarmedium = avatarmedium
+//        self.avatarfull = avatarfull
+//        self.steamProfile = steamProfile
+//        self.steamName = steamName
+//        self.name = name
+//        self.fantasyRole = fantasyRole
+//        self.team = team
+//    }
+//}

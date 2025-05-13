@@ -6,12 +6,15 @@
 //
 
 import ProPlayersNetworkService
+import LocalStorage
 
 public final class DependencyContainer {
     private let networkServiceDependencyContainer: NetworkServiceDependencyContainer
+    private let localStorageDependencyContainer: LocalStorageDependencyContainer
     
     private init() {
         self.networkServiceDependencyContainer = .shared
+        self.localStorageDependencyContainer = .shared
     }
 }
 
