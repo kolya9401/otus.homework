@@ -14,6 +14,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../ProPlayersNetworkService"),
+        .package(path: "../LocalStorage"),
         .package(path: "../UIComponents"),
     ],
     targets: [
@@ -22,6 +23,7 @@ let package = Package(
             dependencies: [
                 "ProPlayersNetworkService",
                 "UIComponents",
+                "LocalStorage",
             ]
         )
     ]
