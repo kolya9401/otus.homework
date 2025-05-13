@@ -25,6 +25,10 @@ extension DependencyContainer {
             networkService: networkServiceDependencyContainer.makeProPlayerListNetworkService()
         )
     }
+    
+    var favoritesProPlayerLocalProvider: FavoritesProPlayerLocalProvider {
+        FavoritesProPlayerLocalProviderImpl(localService: localStorageDependencyContainer.make())
+    }
 }
 
 public extension DependencyContainer {
@@ -36,6 +40,14 @@ public extension DependencyContainer {
 public extension DependencyContainer {
     @MainActor func makeProPlayersListView() -> some View {
         let viewModel = ProPlayersListViewModelImpl(remoteProvider: proPlayersListRemoteProvider)
+        
+        return ProPlayersListView(viewModel: viewModel)
+    }
+    
+    @MainActor func makeFavoritesProPlayerListView() -> some View {
+        let viewModel = FavoritesProPlayerListViewModel(
+            localProvider: favoritesProPlayerLocalProvider
+        )
         
         return ProPlayersListView(viewModel: viewModel)
     }
