@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-public struct ProPlayersListView: View {
-    @ObservedObject var viewModel: ProPlayersListViewModel
+struct ProPlayersListView<ViewModel: ProPlayersListViewModel>: View {
+    @ObservedObject var viewModel: ViewModel
     
-    init(viewModel: ProPlayersListViewModel) {
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
     

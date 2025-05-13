@@ -7,14 +7,19 @@
 
 import Foundation
 
-final class ProPlayersListViewModel: ObservableObject {
-    enum State {
-        case loading
-        case loaded([ProPlayerViewModel])
-        case error(String)
-    }
-    
-    @Published var state: State = .loading
+protocol ProPlayersListViewModel: ObservableObject {
+    @MainActor func load()
+    var state: ProPlayersListViewModelState { get set }
+}
+
+enum ProPlayersListViewModelState {
+    case loading
+    case loaded([ProPlayerViewModel])
+    case error(String)
+}
+
+final class ProPlayersListViewModelImpl  {
+    @Published var state: ProPlayersListViewModelState = .loading
     
     private let remoteProvider: ProPlayersListRemoteProvider
     
@@ -23,8 +28,7 @@ final class ProPlayersListViewModel: ObservableObject {
     }
 }
 
-extension ProPlayersListViewModel {
-    @MainActor
+extension ProPlayersListViewModelImpl: ProPlayersListViewModel {
     func load() {
         state = .loading
         
@@ -35,7 +39,7 @@ extension ProPlayersListViewModel {
     }
 }
 
-private extension ProPlayersListViewModel {
+private extension ProPlayersListViewModelImpl {
     @MainActor
     func applyResult(result: Result<[ProPlayer], Error>) {
         switch result {

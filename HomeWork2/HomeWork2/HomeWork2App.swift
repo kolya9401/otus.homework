@@ -14,7 +14,7 @@ private let di = DependencyContainer.make()
 struct HomeWork2App: App {
     var body: some Scene {
         WindowGroup {
-            di.make()
+            di.makeProPlayersListView()
         }
     }
 }

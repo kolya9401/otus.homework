@@ -5,6 +5,7 @@
 //  Created by Nikolay Zhaboedov on 15.04.2025.
 //
 
+import SwiftUI
 import ProPlayersNetworkService
 import LocalStorage
 
@@ -33,8 +34,10 @@ public extension DependencyContainer {
 }
 
 public extension DependencyContainer {
-    @MainActor func make() -> ProPlayersListView {
-        ProPlayersListView(viewModel: .init(remoteProvider: proPlayersListRemoteProvider))
+    @MainActor func makeProPlayersListView() -> some View {
+        let viewModel = ProPlayersListViewModelImpl(remoteProvider: proPlayersListRemoteProvider)
+        
+        return ProPlayersListView(viewModel: viewModel)
     }
 }
     
