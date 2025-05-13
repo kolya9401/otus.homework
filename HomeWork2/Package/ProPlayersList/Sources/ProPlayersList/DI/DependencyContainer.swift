@@ -39,7 +39,10 @@ public extension DependencyContainer {
 
 public extension DependencyContainer {
     @MainActor func makeProPlayersListView() -> some View {
-        let viewModel = ProPlayersListViewModelImpl(remoteProvider: proPlayersListRemoteProvider)
+        let viewModel = ProPlayersListViewModelImpl(
+            remoteProvider: proPlayersListRemoteProvider,
+            favoritesProPlayerLocalProvider: favoritesProPlayerLocalProvider
+        )
         
         return ProPlayersListView(viewModel: viewModel)
     }

@@ -44,6 +44,14 @@ private extension ProPlayersListView {
     func makeLoadedView(proPlayers: [ProPlayerViewModel]) -> some View {
         List(proPlayers) { player in
             ProPlayerView(viewModel: player)
+                .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                    Button {
+                        viewModel.toggleFavorite(player: player)
+                    } label: {
+                        Label("Избранное", systemImage: "star")
+                    }
+                    .tint(.yellow)
+                }
         }
     }
 }

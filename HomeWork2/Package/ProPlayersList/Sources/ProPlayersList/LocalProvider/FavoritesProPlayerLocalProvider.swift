@@ -9,7 +9,8 @@ import LocalStorage
 
 protocol FavoritesProPlayerLocalProvider {
     func getFavoritesProPlayers() -> [ProPlayer]
-    func appendFavoriteProPlayer(_ proPlayer: ProPlayer)
+    
+    func toggleFavoriteProPlayer(_ player: ProPlayer)
     
     func checkIsFavoriteProPlayer(_ proPlayer: ProPlayer) -> Bool
 }
@@ -32,6 +33,22 @@ extension FavoritesProPlayerLocalProviderImpl: FavoritesProPlayerLocalProvider {
         let dto = proPlayer.convertToDTO()
         
         localService.appendFavoriteProPlayer(dto)
+    }
+    
+    func toggleFavoriteProPlayer(_ player: ProPlayer) {
+        let dto = player.convertToDTO()
+        
+        if checkIsFavoriteProPlayer(player) {
+            localService.removeFavoriteProPlayer(dto)
+        } else {
+            localService.appendFavoriteProPlayer(dto)
+        }
+    }
+    
+    func removeFavoriteProPlayer(_ proPlayer: ProPlayer) {
+        let dto = proPlayer.convertToDTO()
+
+        localService.removeFavoriteProPlayer(dto)
     }
     
     func checkIsFavoriteProPlayer(_ proPlayer: ProPlayer) -> Bool {

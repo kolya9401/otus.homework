@@ -8,8 +8,10 @@
 import Foundation
 
 protocol ProPlayersListViewModel: ObservableObject {
-    @MainActor func load()
     var state: ProPlayersListViewModelState { get set }
+    
+    @MainActor func load()
+    @MainActor func toggleFavorite(player: ProPlayerViewModel)
 }
 
 enum ProPlayersListViewModelState {
