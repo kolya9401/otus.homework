@@ -6,30 +6,31 @@
 //
 
 import Foundation
-import OpenAPIClient
+import ProPlayersNetworkService
 
 protocol ProPlayersListRemoteProvider: Sendable {
     func get() async -> Result<[ProPlayer], Error>
 }
 
 final class ProPlayersListRemoteProviderImpl {
+    private let networkService: ProPlayerListNetworkService
+    
+    init(networkService: ProPlayerListNetworkService) {
+        self.networkService = networkService
+    }
 }
 
 // MARK: - ProPlayersListRemoteProvider
 extension ProPlayersListRemoteProviderImpl: ProPlayersListRemoteProvider {
     func get() async -> Result<[ProPlayer], Error> {
-        do {
-            let result = try await ProPlayersAPI.getProPlayers()
-                .compactMap { $0.tryConvertToProPlayer() }
-            
-            return .success(result)
-        } catch {
-            return .failure(error)
-        }
+        await networkService.get()
+            .map { players in
+                players.compactMap { $0.tryConvertToProPlayer() }
+            }
     }
 }
 
-private extension PlayerObjectResponse {
+private extension ProPlayerNTO {
     func tryConvertToProPlayer() -> ProPlayer? {
         guard
             let accountId = self.accountId,

@@ -4,24 +4,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "ProPlayersFavorites",
+    name: "ProPlayersNetworkService",
     platforms: [.iOS("18.0")],
     products: [
         .library(
-            name: "ProPlayersFavorites",
-            targets: ["ProPlayersFavorites"]
+            name: "ProPlayersNetworkService",
+            targets: ["ProPlayersNetworkService"]
         ),
     ],
     dependencies: [
         .package(path: "../OpenAPIClient"),
-        .package(path: "../UIComponents"),
     ],
     targets: [
         .target(
-            name: "ProPlayersFavorites",
+            name: "ProPlayersNetworkService",
             dependencies: [
                 "OpenAPIClient",
-                "UIComponents",
             ]
         )
     ]

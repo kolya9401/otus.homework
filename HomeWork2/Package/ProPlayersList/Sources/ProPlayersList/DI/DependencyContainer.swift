@@ -5,11 +5,21 @@
 //  Created by Nikolay Zhaboedov on 15.04.2025.
 //
 
+import ProPlayersNetworkService
+
 public final class DependencyContainer {
-    private let proPlayersListRemoteProvider: ProPlayersListRemoteProvider = ProPlayersListRemoteProviderImpl()
+    private let networkServiceDependencyContainer: NetworkServiceDependencyContainer
     
     private init() {
-        
+        self.networkServiceDependencyContainer = .shared
+    }
+}
+
+extension DependencyContainer {
+    var proPlayersListRemoteProvider: ProPlayersListRemoteProvider {
+        ProPlayersListRemoteProviderImpl(
+            networkService: networkServiceDependencyContainer.makeProPlayerListNetworkService()
+        )
     }
 }
 

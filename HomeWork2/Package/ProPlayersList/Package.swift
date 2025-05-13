@@ -13,14 +13,14 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../OpenAPIClient"),
+        .package(path: "../ProPlayersNetworkService"),
         .package(path: "../UIComponents"),
     ],
     targets: [
         .target(
             name: "ProPlayersList",
             dependencies: [
-                "OpenAPIClient",
+                "ProPlayersNetworkService",
                 "UIComponents",
             ]
         )
