@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		344B08892DAE7C5B003312BF /* ProPlayersList in Frameworks */ = {isa = PBXBuildFile; productRef = 344B08882DAE7C5B003312BF /* ProPlayersList */; };
+		95533BB22DD51714007EFF3D /* Onboarding in Frameworks */ = {isa = PBXBuildFile; productRef = 95533BB12DD51714007EFF3D /* Onboarding */; };
 		958935D92DD3AE5600CEF8AC /* ProPlayersNetworkService in Frameworks */ = {isa = PBXBuildFile; productRef = 958935D82DD3AE5600CEF8AC /* ProPlayersNetworkService */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 			files = (
 				958935D92DD3AE5600CEF8AC /* ProPlayersNetworkService in Frameworks */,
 				344B08892DAE7C5B003312BF /* ProPlayersList in Frameworks */,
+				95533BB22DD51714007EFF3D /* Onboarding in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +76,7 @@
 			packageProductDependencies = (
 				344B08882DAE7C5B003312BF /* ProPlayersList */,
 				958935D82DD3AE5600CEF8AC /* ProPlayersNetworkService */,
+				95533BB12DD51714007EFF3D /* Onboarding */,
 			);
 			productName = HomeWork2;
 			productReference = 340D778B2DAD195100EAE0DD /* HomeWork2.app */;
@@ -106,6 +109,7 @@
 			packageReferences = (
 				344B08872DAE7C5B003312BF /* XCLocalSwiftPackageReference "Package/ProPlayersList" */,
 				958935D72DD3AE5600CEF8AC /* XCLocalSwiftPackageReference "Package/ProPlayersNetworkService" */,
+				95533BB02DD51714007EFF3D /* XCLocalSwiftPackageReference "Package/Onboarding" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 340D778C2DAD195100EAE0DD /* Products */;
@@ -345,6 +349,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Package/ProPlayersList;
 		};
+		95533BB02DD51714007EFF3D /* XCLocalSwiftPackageReference "Package/Onboarding" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Package/Onboarding;
+		};
 		958935D72DD3AE5600CEF8AC /* XCLocalSwiftPackageReference "Package/ProPlayersNetworkService" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Package/ProPlayersNetworkService;
@@ -355,6 +363,10 @@
 		344B08882DAE7C5B003312BF /* ProPlayersList */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ProPlayersList;
+		};
+		95533BB12DD51714007EFF3D /* Onboarding */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Onboarding;
 		};
 		958935D82DD3AE5600CEF8AC /* ProPlayersNetworkService */ = {
 			isa = XCSwiftPackageProductDependency;

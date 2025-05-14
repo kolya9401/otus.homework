@@ -15,14 +15,12 @@ let package = Package(
     dependencies: [
         .package(path: "../ProPlayersNetworkService"),
         .package(path: "../LocalStorage"),
-        .package(path: "../UIComponents"),
     ],
     targets: [
         .target(
             name: "ProPlayersList",
             dependencies: [
                 "ProPlayersNetworkService",
-                "UIComponents",
                 "LocalStorage",
             ]
         )

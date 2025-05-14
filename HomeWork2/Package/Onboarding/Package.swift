@@ -4,17 +4,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "UIComponents",
+    name: "Onboarding",
     platforms: [.iOS("18.0")],
     products: [
         .library(
-            name: "UIComponents",
-            targets: ["UIComponents"]
+            name: "Onboarding",
+            targets: ["Onboarding"]
         ),
     ],
     targets: [
         .target(
-            name: "UIComponents"
+            name: "Onboarding"
         )
     ]
 )
