@@ -10,7 +10,9 @@ import SwiftUI
 public final class OnboardingDependencyContainer: @unchecked Sendable {
     private init() {
     }
+}
 
+public extension OnboardingDependencyContainer {
     static let shared: OnboardingDependencyContainer = .init()
 }
 

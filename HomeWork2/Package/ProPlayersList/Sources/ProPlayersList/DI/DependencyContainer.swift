@@ -8,14 +8,17 @@
 import SwiftUI
 import ProPlayersNetworkService
 import LocalStorage
+import Onboarding
 
 public final class DependencyContainer {
     private let networkServiceDependencyContainer: NetworkServiceDependencyContainer
     private let localStorageDependencyContainer: LocalStorageDependencyContainer
+    private let onboardingDependencyContainer: OnboardingDependencyContainer
     
     private init() {
         self.networkServiceDependencyContainer = .shared
         self.localStorageDependencyContainer = .shared
+        self.onboardingDependencyContainer = .shared
     }
 }
 
@@ -27,7 +30,9 @@ extension DependencyContainer {
     }
     
     var favoritesProPlayerLocalProvider: FavoritesProPlayerLocalProvider {
-        FavoritesProPlayerLocalProviderImpl(localService: localStorageDependencyContainer.make())
+        FavoritesProPlayerLocalProviderImpl(
+            localService: localStorageDependencyContainer.makeFavoritesProPlayerLocalService()
+        )
     }
 }
 
@@ -37,6 +42,13 @@ public extension DependencyContainer {
     }
 }
 
+public extension DependencyContainer {
+    func makeOnboardingStatusProvider() -> OnboardingStatusProvider {
+        localStorageDependencyContainer.makeOnboardingStatusProvider()
+    }
+}
+
+// MARK: UI
 public extension DependencyContainer {
     @MainActor func makeProPlayersListView() -> some View {
         let viewModel = ProPlayersListViewModelImpl(
@@ -53,6 +65,10 @@ public extension DependencyContainer {
         )
         
         return ProPlayersListView(viewModel: viewModel)
+    }
+    
+    @MainActor func makeOnboardingView(onTapToStartApp: @escaping () -> Void) -> some View {
+        onboardingDependencyContainer.makeOnboardingView(onTapToStartApp: onTapToStartApp)
     }
 }
     

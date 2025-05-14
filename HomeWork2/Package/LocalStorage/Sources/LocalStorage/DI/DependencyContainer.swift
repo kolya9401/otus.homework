@@ -18,7 +18,11 @@ public extension LocalStorageDependencyContainer {
 }
 
 public extension LocalStorageDependencyContainer {
-    func make() -> FavoritesProPlayerLocalService {
+    func makeFavoritesProPlayerLocalService() -> FavoritesProPlayerLocalService {
         FavoritesProPlayerLocalServiceImpl(keyValueStorage: keyValueStorage)
+    }
+    
+    func makeOnboardingStatusProvider() -> OnboardingStatusProvider {
+        OnboardingStatusProviderImpl(userKeyValueStorage: keyValueStorage)
     }
 }

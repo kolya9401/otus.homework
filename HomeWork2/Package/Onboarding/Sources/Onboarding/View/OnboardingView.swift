@@ -15,7 +15,11 @@ struct OnboardingView: View {
     }
     
     var body: some View {
+        Spacer()
         Text("Данное приложение предоставляет возможность посмотреть список про-игроков в Dota 2")
+            .padding(.horizontal, 16)
+            .frame(alignment: .center)
+        
         Spacer()
         Button(
             action: { onTapToStartApp() },
