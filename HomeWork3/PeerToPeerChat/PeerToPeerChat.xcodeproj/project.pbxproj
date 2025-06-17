@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		9529BDF02DFF7EE300A8F71A /* PeerToPeerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeerToPeerChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9529BDF02DFF7EE300A8F71A /* PeerToPeerChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = PeerToPeerChat.app; path = /Users/nikolay/Work/Projects/otus.homework/HomeWork3/PeerToPeerChat/build/Debug/PeerToPeerChat.app; sourceTree = "<absolute>"; };
+		9563AEEF2E00B92400B896F5 /* PeerToPeerChat.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = PeerToPeerChat.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -29,11 +30,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9563AEF12E00B92400B896F5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		958D071A2DFAEC480003BA01 = {
 			isa = PBXGroup;
 			children = (
 				958D07252DFAEC480003BA01 /* PeerToPeerChat */,
-				9529BDF02DFF7EE300A8F71A /* PeerToPeerChat.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +96,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 958D071A2DFAEC480003BA01;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9563AEF12E00B92400B896F5 /* Products */;
+					ProjectRef = 9563AEEF2E00B92400B896F5 /* PeerToPeerChat.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				958D07222DFAEC480003BA01 /* PeerToPeerChat */,
