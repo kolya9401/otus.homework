@@ -7,16 +7,6 @@ plugins {
 }
 
 kotlin {
-    androidTarget {
-        compilations.all {
-            compileTaskProvider.configure {
-                compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_1_8)
-                }
-            }
-        }
-    }
-    
     listOf(
         iosX64(),
         iosArm64(),
@@ -46,18 +36,6 @@ kotlin {
                 implementation("io.ktor:ktor-client-darwin:2.3.5")
             }
         }
-    }
-}
-
-android {
-    namespace = "com.lognex.myapplication"
-    compileSdk = 35
-    defaultConfig {
-        minSdk = 33
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
 
